@@ -33,7 +33,7 @@
 	<NetworkSection>
 		<Info>The list of logical networks</Info>
 
-		<Network ovf:name="Network 11"
+		<Network ovf:name="MGM_INBAN"
 			ecs:existing="false"
 			ecs:external="false"
 			ecs:category="layer3MultiSeg"
@@ -46,7 +46,7 @@
 			<Description>MGM-INBAND_CUY</Description>
 		</Network>
 
-		<Network ovf:name="Network 12"
+		<Network ovf:name="SINGALING_CN"
 			ecs:existing="false"
 			ecs:external="false"
 			ecs:category="layer3MultiSeg"
@@ -59,7 +59,7 @@
 			<Description>SINGALING-CN_CUY</Description>
 		</Network>
 
-		<Network ovf:name="Network 13"
+		<Network ovf:name="MEDIA_CN"
 			ecs:existing="false"
 			ecs:external="false"
 			ecs:category="layer3MultiSeg"
@@ -72,7 +72,7 @@
 			<Description>MEDIA_CN_CUY</Description>
 		</Network>
 
-		<Network ovf:name="Network 14"
+		<Network ovf:name="SI_OSS"
 			ecs:existing="false"
 			ecs:external="false"
 			ecs:category="layer3MultiSeg"
@@ -85,7 +85,7 @@
 			<Description>SI_OSS_CUY</Description>
 		</Network>
 
-		<Network ovf:name="Network 15"
+		<Network ovf:name="SE_OSS"
 			ecs:existing="false"
 			ecs:external="false"
 			ecs:category="layer3MultiSeg"
@@ -99,9 +99,9 @@
 		</Network>
 
 		<ecs:AdditionalSegments>
-        	<ecs:AdditionalSegmentList ecs:vnName="Network 11">
+        	<ecs:AdditionalSegmentList ecs:vnName="MGM_INBAN">
         		<ecs:AdditionalSegment
-            	ecs:name="Network 11"
+            	ecs:name="MGM_INBAN"
             	ecs:networkType="VLAN"
 							ecs:physicalNetwork="pool_1"
             	ecs:useEcmSegmentationId = "false"
@@ -110,9 +110,9 @@
         </ecs:AdditionalSegments>
 
 		<ecs:AdditionalSegments>
-        	<ecs:AdditionalSegmentList ecs:vnName="Network 12">
+        	<ecs:AdditionalSegmentList ecs:vnName="SINGALING_CN">
         		<ecs:AdditionalSegment
-            	ecs:name="Network 12"
+            	ecs:name="SINGALING_CN"
             	ecs:networkType="VLAN"
 							ecs:physicalNetwork="pool_1"
             	ecs:useEcmSegmentationId = "false"
@@ -121,9 +121,9 @@
         </ecs:AdditionalSegments>
 
 		<ecs:AdditionalSegments>
-        	<ecs:AdditionalSegmentList ecs:vnName="Network 13">
+        	<ecs:AdditionalSegmentList ecs:vnName="MEDIA_CN">
         		<ecs:AdditionalSegment
-            	ecs:name="Network 13"
+            	ecs:name="MEDIA_CN"
             	ecs:networkType="VLAN"
 							ecs:physicalNetwork="pool_2"
             	ecs:useEcmSegmentationId = "false"
@@ -132,9 +132,9 @@
         </ecs:AdditionalSegments>
 
 		<ecs:AdditionalSegments>
-        	<ecs:AdditionalSegmentList ecs:vnName="Network 14">
+        	<ecs:AdditionalSegmentList ecs:vnName="SI_OSS">
         		<ecs:AdditionalSegment
-            	ecs:name="Network 14"
+            	ecs:name="SI_OSS"
             	ecs:networkType="VLAN"
 							ecs:physicalNetwork="pool_2"
             	ecs:useEcmSegmentationId = "false"
@@ -143,9 +143,9 @@
         </ecs:AdditionalSegments>
 
 		<ecs:AdditionalSegments>
-        	<ecs:AdditionalSegmentList ecs:vnName="Network 15">
+        	<ecs:AdditionalSegmentList ecs:vnName="SE_OSS">
         		<ecs:AdditionalSegment
-            	ecs:name="Network 15"
+            	ecs:name="SE_OSS"
             	ecs:networkType="VLAN"
 							ecs:physicalNetwork="pool_2"
             	ecs:useEcmSegmentationId = "false"
@@ -207,7 +207,7 @@
        <Item ecs:id="SR-IOV VNIC0">
           <rasd:AddressOnParent>7</rasd:AddressOnParent>
           <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
-          <rasd:Connection>Network 11</rasd:Connection>
+          <rasd:Connection>MGM_INBAN</rasd:Connection>
           <rasd:Description>SR-IOV</rasd:Description>
           <rasd:ElementName>VNIC0</rasd:ElementName>
           <rasd:InstanceID>6</rasd:InstanceID>
