@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Envelope vmw:buildId="build-947673"
+	xmlns="http://schemas.dmtf.org/ovf/envelope/2"
+	xmlns:cim="http://schemas.dmtf.org/wbem/wscim/1/common"
+	xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/2"
+	xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData"
+	xmlns:vmw="http://www.vmware.com/schema/ovf"
+	xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:epasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_EthernetPortAllocationSettingData"
+	xmlns:ecs="http://schemas.ericsson.com/ovf/2"
+	xmlns:bootc="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_BootConfigSetting"
+    xmlns:boots="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_BootSourceSetting">
+
+	<References>
+		<File ovf:href="Unica_Gen_vSwitch_CSS_dhcp_Ubuntu_16.04" ovf:id="file1" ecs:existing="true" />
+	</References>
+
+	<ecs:ResourceGroupSection>
+		<Info>Resource Group Section</Info>
+		<ecs:ResourceGroup ecs:id="Group1">
+			<ecs:Placement ecs:name="placementZone" ecs:value="TypeB_01"/>
+		</ecs:ResourceGroup>
+	</ecs:ResourceGroupSection>
+
+	<DiskSection>
+		<Info>Virtual disk information</Info>
+		<Disk ovf:capacity="40"
+			ovf:capacityAllocationUnits="byte * 2^30" ovf:diskId="Server_disk" ovf:fileRef="file1" ecs:resourceGroupRef="Group1"
+		ecs:description="image"/>
+	</DiskSection>
+
+	<NetworkSection>
+		<Info>The list of logical networks</Info>
+
+		<Network ovf:name="Network 11"
+			ecs:existing="false"
+			ecs:external="false"
+			ecs:category="layer3MultiSeg"
+			ecs:vlanTransparent="false"
+			ecs:ipVersion="4"
+			ecs:dhcpEnabled="false"
+			ecs:staticIPAddressRange="10.5.216.64/28"
+			ecs:networkType="vxlan"
+      ecs:useEcmSegmentationId = "false">
+			<Description>MGM-INBAND_CUY</Description>
+		</Network>
+
+		<Network ovf:name="Network 12"
+			ecs:existing="false"
+			ecs:external="false"
+			ecs:category="layer3MultiSeg"
+			ecs:vlanTransparent="false"
+			ecs:ipVersion="4"
+			ecs:dhcpEnabled="false"
+			ecs:staticIPAddressRange="10.5.180.112/28"
+			ecs:networkType="vxlan"
+        	ecs:useEcmSegmentationId = "false">
+			<Description>SINGALING-CN_CUY</Description>
+		</Network>
+
+		<Network ovf:name="Network 13"
+			ecs:existing="false"
+			ecs:external="false"
+			ecs:category="layer3MultiSeg"
+			ecs:vlanTransparent="false"
+			ecs:ipVersion="4"
+			ecs:dhcpEnabled="false"
+			ecs:staticIPAddressRange="10.5.133.112/28"
+			ecs:networkType="vxlan"
+        	ecs:useEcmSegmentationId = "false">
+			<Description>MEDIA_CN_CUY</Description>
+		</Network>
+
+		<Network ovf:name="Network 14"
+			ecs:existing="false"
+			ecs:external="false"
+			ecs:category="layer3MultiSeg"
+			ecs:vlanTransparent="false"
+			ecs:ipVersion="4"
+			ecs:dhcpEnabled="false"
+			ecs:staticIPAddressRange="10.5.177.8/29"
+			ecs:networkType="vxlan"
+        	ecs:useEcmSegmentationId = "false">
+			<Description>SI_OSS_CUY</Description>
+		</Network>
+
+		<Network ovf:name="Network 15"
+			ecs:existing="false"
+			ecs:external="false"
+			ecs:category="layer3MultiSeg"
+			ecs:vlanTransparent="false"
+			ecs:ipVersion="4"
+			ecs:dhcpEnabled="false"
+			ecs:staticIPAddressRange="186.143.132.144/28"
+			ecs:networkType="vxlan"
+        	ecs:useEcmSegmentationId = "false">
+			<Description>SE_OSS_CUY</Description>
+		</Network>
+
+		<ecs:AdditionalSegments>
+        	<ecs:AdditionalSegmentList ecs:vnName="Network 11">
+        		<ecs:AdditionalSegment
+            	ecs:name="Network 11"
+            	ecs:networkType="VLAN"
+							ecs:physicalNetwork="pool_1"
+            	ecs:useEcmSegmentationId = "false"
+							ecs:segmentationId= "243"/>
+        	</ecs:AdditionalSegmentList>
+        </ecs:AdditionalSegments>
+
+		<ecs:AdditionalSegments>
+        	<ecs:AdditionalSegmentList ecs:vnName="Network 12">
+        		<ecs:AdditionalSegment
+            	ecs:name="Network 12"
+            	ecs:networkType="VLAN"
+							ecs:physicalNetwork="pool_1"
+            	ecs:useEcmSegmentationId = "false"
+							ecs:segmentationId= "245"/>
+        	</ecs:AdditionalSegmentList>
+        </ecs:AdditionalSegments>
+
+		<ecs:AdditionalSegments>
+        	<ecs:AdditionalSegmentList ecs:vnName="Network 13">
+        		<ecs:AdditionalSegment
+            	ecs:name="Network 13"
+            	ecs:networkType="VLAN"
+							ecs:physicalNetwork="pool_2"
+            	ecs:useEcmSegmentationId = "false"
+							ecs:segmentationId= "342"/>
+        	</ecs:AdditionalSegmentList>
+        </ecs:AdditionalSegments>
+
+		<ecs:AdditionalSegments>
+        	<ecs:AdditionalSegmentList ecs:vnName="Network 14">
+        		<ecs:AdditionalSegment
+            	ecs:name="Network 14"
+            	ecs:networkType="VLAN"
+							ecs:physicalNetwork="pool_2"
+            	ecs:useEcmSegmentationId = "false"
+							ecs:segmentationId= "343"/>
+        	</ecs:AdditionalSegmentList>
+        </ecs:AdditionalSegments>
+
+		<ecs:AdditionalSegments>
+        	<ecs:AdditionalSegmentList ecs:vnName="Network 15">
+        		<ecs:AdditionalSegment
+            	ecs:name="Network 15"
+            	ecs:networkType="VLAN"
+							ecs:physicalNetwork="pool_2"
+            	ecs:useEcmSegmentationId = "false"
+							ecs:segmentationId= "351"/>
+        	</ecs:AdditionalSegmentList>
+        </ecs:AdditionalSegments>
+
+	</NetworkSection>
+
+
+	<VirtualSystem ovf:id="DUMMY" ecs:type="Server" ecs:resourceGroupRef="Group1">
+		 <Info>A DUMMY virtual machine</Info>
+		 <Name>DUMMY</Name>
+		 <ProductSection>
+			  <Info>Information about the installed software</Info>
+		 </ProductSection>
+		 <VirtualHardwareSection>
+			 <Info>Virtual hardware requirements</Info>
+			 <Item>
+					<rasd:AllocationUnits>hertz * 10^6</rasd:AllocationUnits>
+					<rasd:Description>Number of Virtual CPUs</rasd:Description>
+					<rasd:ElementName>2 virtual CPU(s)</rasd:ElementName>
+					<rasd:InstanceID>1</rasd:InstanceID>
+					<rasd:ResourceType>3</rasd:ResourceType>
+					<rasd:VirtualQuantity>2</rasd:VirtualQuantity>
+			 </Item>
+			 <Item>
+					<rasd:AllocationUnits>byte * 2^20</rasd:AllocationUnits>
+					<rasd:Description>Memory Size</rasd:Description>
+					<rasd:ElementName>1024MB of memory</rasd:ElementName>
+					<rasd:InstanceID>2</rasd:InstanceID>
+					<rasd:ResourceType>4</rasd:ResourceType>
+					<rasd:VirtualQuantity>1024</rasd:VirtualQuantity>
+			 </Item>
+			 <Item>
+					<rasd:AddressOnParent>0</rasd:AddressOnParent>
+					<rasd:ElementName>Hard Disk 1</rasd:ElementName>
+					<rasd:HostResource>ovf:/disk/Server_disk</rasd:HostResource>
+					<rasd:InstanceID>3</rasd:InstanceID>
+					<rasd:Parent>3</rasd:Parent>
+					<rasd:ResourceType>17</rasd:ResourceType>
+			 </Item>
+       <Item>
+      		<rasd:AllocationUnits>byte * 2^20</rasd:AllocationUnits>
+          <rasd:Description> space allocation</rasd:Description>
+          <rasd:ElementName>0 MB Swap</rasd:ElementName>
+          <rasd:InstanceID>4</rasd:InstanceID>
+          <rasd:ResourceType>19</rasd:ResourceType>
+          <rasd:VirtualQuantity>0</rasd:VirtualQuantity>
+       </Item>
+			 <Item>
+        	<rasd:AllocationUnits>byte * 2^30</rasd:AllocationUnits>
+          <rasd:Description>Harddisk</rasd:Description>
+          <rasd:ElementName>0 GB Ephemeral Disk</rasd:ElementName>
+          <rasd:InstanceID>5</rasd:InstanceID>
+          <rasd:ResourceType>20</rasd:ResourceType>
+          <rasd:VirtualQuantity>0</rasd:VirtualQuantity>
+       </Item>
+       <Item ecs:id="SR-IOV VNIC0">
+          <rasd:AddressOnParent>7</rasd:AddressOnParent>
+          <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
+          <rasd:Connection>Network 11</rasd:Connection>
+          <rasd:Description>SR-IOV</rasd:Description>
+          <rasd:ElementName>VNIC0</rasd:ElementName>
+          <rasd:InstanceID>6</rasd:InstanceID>
+          <rasd:ResourceSubType>SR-IOV DIRECT</rasd:ResourceSubType>
+          <rasd:ResourceType>10</rasd:ResourceType>
+			 </Item>
+			 <ecs:rxTxFactor>1</ecs:rxTxFactor>
+			 <ecs:ExtraSpecs>
+					<ecs:Info>Extra Spec key and value pairs</ecs:Info>
+					<ecs:ExtraSpec ecs:key="hw:cpu_policy" ecs:value="dedicated" />
+					<ecs:ExtraSpec ecs:key="hw:mem_page_size" ecs:value="1048576" />
+				</ecs:ExtraSpecs>
+		</VirtualHardwareSection>
+	</VirtualSystem>
+
+
+</Envelope>
